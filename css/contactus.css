@@ -1,0 +1,158 @@
+#contact-hero-section {
+  height: 50vh;
+}
+
+.contactus-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 150px;
+}
+
+.contactus-heading h2 {
+  font-size: 25px;
+  font-weight: 600px;
+  color: #141414;
+}
+
+.contact-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px 20px;
+}
+
+.contact-details,
+.contact-form {
+  width: 100%;
+}
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+}
+
+.contact-details h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #251b1b;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-form h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #251b1b;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+label {
+  font-size: 16px;
+}
+
+.form-section{
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+
+input {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #251b1b;
+  outline-color: #b78e60;
+  padding: 10px 15px;
+}
+
+textarea {
+    padding: 10px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #251b1b;
+  outline-color: #b78e60;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+gap: 8px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  font-size: 16px;
+  padding: 8px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+}
+
+.submit {
+  background-color: #251b1b;
+  color: #fff;
+  border: none;
+}
+
+
+.reset{
+    background-color: #f5f5f5;
+    border: 1px solid #251b1b;
+
+}
+
+@media (min-width: 781px) {
+  .contactus-heading h1 {
+    font-size: 30px;
+  }
+  .contact-details-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 50px 0;
+  }
+  .contact-details,
+  .contact-form {
+    flex: 0 1 400px;
+  }
+
+  .contact-details h2 {
+    font-size: 20px;
+  }
+  .contact-form h2 {
+    font-size: 20px;
+  }
+.form-section{
+display: flex;
+flex-direction: row;
+gap: 8px;
+}
+  input {
+    width: 300px;
+  }
+
+  textarea {
+    width: 280px;
+  }
+  .message-container {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+
+}
