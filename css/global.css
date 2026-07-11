@@ -26,22 +26,12 @@ body {
   width: 100%;
   position: fixed;
   top: 0;
-  background-color: transparent;
+  background-color: #9f764c;
   z-index: 1000;
 
-  transition: background-color 0.3s ease;
-  animation: navbar-bg linear;
-  animation-timeline: scroll(root);
 }
 
-@keyframes navbar-bg {
-  from {
-    background-color: transparent;
-  }
-  to {
-    background-color: #87684b;
-  }
-}
+
 
 .nav-links {
   display: flex;
@@ -60,10 +50,6 @@ body {
   text-decoration: underline;
 }
 
-.nav-links a:focus,
-.nav-links a:active {
-  text-decoration: underline;
-}
 
 .nav-links .active{
   text-decoration: underline;
@@ -72,7 +58,7 @@ body {
 .footer-content {
   background-color: #141414;
   color: #fff;
-  padding: 20px;
+  padding: 20px 30px;
   text-align: center;
   width: 100%;
 }
@@ -82,4 +68,28 @@ body {
   line-height: 1.5em;
 }
 
+@media (min-width: 769px){
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: transparent;
+  z-index: 1000;
 
+  transition: background-color 0.3s ease;
+  animation: navbar-bg linear;
+  animation-timeline: scroll(root);
+}
+
+@keyframes navbar-bg {
+  from {
+    background-color: transparent;
+  }
+  to {
+    background-color: #9f764c;
+  }
+}
+}
