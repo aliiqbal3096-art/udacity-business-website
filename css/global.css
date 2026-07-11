@@ -26,7 +26,7 @@ body {
   width: 100%;
   position: fixed;
   top: 0;
-  background-color: #9f764c;
+  background-color: rgba(159, 118, 76, 0.3);
   z-index: 1000;
 
 }
@@ -69,27 +69,21 @@ body {
 }
 
 @media (min-width: 769px){
-.navbar {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  background-color: transparent;
-  z-index: 1000;
+  @supports (animation-timeline: scroll(root)) {
+    .navbar {
+      background-color: transparent;
+      transition: background-color 0.3s ease;
+      animation: navbar-bg linear;
+      animation-timeline: scroll(root);
+    }
 
-  transition: background-color 0.3s ease;
-  animation: navbar-bg linear;
-  animation-timeline: scroll(root);
-}
-
-@keyframes navbar-bg {
-  from {
-    background-color: transparent;
+    @keyframes navbar-bg {
+      from {
+        background-color: transparent;
+      }
+      to {
+        background-color: #9f764c;
+      }
+    }
   }
-  to {
-    background-color: #9f764c;
-  }
-}
 }
