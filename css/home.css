@@ -97,7 +97,7 @@
 
 .about-us-text {
   width: 100%;
-  padding: 20px 10px;
+  padding: 20px 20px;
 }
 
 .about-us img {
@@ -141,7 +141,7 @@
 }
 
 .product-gallery-grid {
-  padding: 0 10px;
+  padding: 0 20px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;

@@ -11,7 +11,6 @@ body {
   font-weight: bold;
 }
 
-
 .hero-section {
   height: 100vh;
   background-image: url("../images/landing-page-2.jpeg");
@@ -28,10 +27,7 @@ body {
   top: 0;
   background-color: rgba(159, 118, 76, 0.3);
   z-index: 1000;
-
 }
-
-
 
 .nav-links {
   display: flex;
@@ -50,8 +46,7 @@ body {
   text-decoration: underline;
 }
 
-
-.nav-links .active{
+.nav-links .active {
   text-decoration: underline;
 }
 
@@ -66,24 +61,4 @@ body {
 .footer-content p {
   font-size: 16px;
   line-height: 1.5em;
-}
-
-@media (min-width: 769px){
-  @supports (animation-timeline: scroll(root)) {
-    .navbar {
-      background-color: transparent;
-      transition: background-color 0.3s ease;
-      animation: navbar-bg linear;
-      animation-timeline: scroll(root);
-    }
-
-    @keyframes navbar-bg {
-      from {
-        background-color: transparent;
-      }
-      to {
-        background-color: #9f764c;
-      }
-    }
-  }
 }
