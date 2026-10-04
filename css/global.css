@@ -1,64 +1,299 @@
+/* ========================================
+   GLOBAL RESET
+======================================== */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: Cambria, Cochin, Georgia, "Times New Roman", serif;
+  background-color: #f8f5f0;
+  color: #241a17;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
 }
 
 .bolder {
-  font-weight: bold;
+  font-weight: 700;
 }
 
+
+/* ========================================
+   HERO SECTION FOUNDATION
+======================================== */
+
 .hero-section {
-  height: 100vh;
+  position: relative;
+
+  min-height: 100vh;
+
   background-image: url("../images/landing-page-2.jpeg");
   background-size: cover;
   background-position: center;
+
+  overflow: hidden;
+
+  animation:
+    heroImage 18s
+    ease-out
+    forwards;
 }
 
+
+/* ========================================
+   NAVBAR
+======================================== */
+
 .navbar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
   display: flex;
   justify-content: center;
-  padding: 20px;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  background-color: rgba(159, 118, 76, 0.3);
+
+  padding: 24px 30px;
+
+  background: rgba(248, 245, 240, 0.72);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid
+    rgba(183, 142, 96, 0.25);
+
   z-index: 1000;
+
+  animation:
+    navbarReveal
+    1s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+
+  transition:
+    background-color 0.5s ease,
+    border-color 0.5s ease,
+    padding 0.5s ease,
+    box-shadow 0.5s ease;
 }
+
+
+/* ========================================
+   NAVIGATION LINKS
+======================================== */
 
 .nav-links {
   display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 42px;
+
   list-style: none;
-  gap: 20px;
 }
 
 .nav-links a {
+  position: relative;
+
+  padding: 5px 0;
+
+  color: #241a17;
+
   text-decoration: none;
-  color: #251b1b;
-  font-size: 18px;
-  font-weight: bold;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  letter-spacing: 0.8px;
+
+  transition:
+    color 0.4s ease,
+    letter-spacing 0.4s ease;
+}
+
+
+/* Gold animated underline */
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -5px;
+
+  width: 0;
+  height: 1px;
+
+  background-color: #b78e60;
+
+  transform: translateX(-50%);
+
+  transition:
+    width 0.45s
+    cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .nav-links a:hover {
-  text-decoration: underline;
+  color: #b78e60;
+
+  letter-spacing: 1.2px;
 }
 
-.nav-links .active {
-  text-decoration: underline;
-}
-
-.footer-content {
-  background-color: #141414;
-  color: #fff;
-  padding: 20px 30px;
-  text-align: center;
+.nav-links a:hover::after {
   width: 100%;
 }
 
+.nav-links .active {
+  color: #b78e60;
+}
+
+.nav-links .active::after {
+  width: 100%;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer-content {
+  width: 100%;
+
+  padding: 30px;
+
+  text-align: center;
+
+  background-color: #241a17;
+
+  color: #f8f5f0;
+}
+
 .footer-content p {
-  font-size: 16px;
-  line-height: 1.5em;
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+
+/* ========================================
+   HERO IMAGE ANIMATION
+======================================== */
+
+@keyframes heroImage {
+  from {
+    background-size: 100%;
+
+    background-position:
+      center center;
+  }
+
+  to {
+    background-size: 106%;
+
+    background-position:
+      center center;
+  }
+}
+
+
+/* ========================================
+   NAVBAR ENTRANCE
+======================================== */
+
+@keyframes navbarReveal {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px;
+  }
+
+  .nav-links {
+    gap: 28px;
+  }
+
+  .nav-links a {
+    font-size: 15px;
+  }
+}
+
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 18px 15px;
+  }
+
+  .nav-links {
+    gap: 20px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+
+    letter-spacing: 0.4px;
+  }
+}
+
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
 }
